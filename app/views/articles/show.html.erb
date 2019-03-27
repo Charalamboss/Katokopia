@@ -8,7 +8,7 @@
  <div class="article-body">
 <p>
   <strong>Text:</strong>
-  <%= @article.body %>
+  <%=sanitize(@article.body, tags: %w(b strong em i a)).html_safe %>
 </p>
 </div>
 
