@@ -2,12 +2,13 @@ require 'capybara'
 
 # uncomment default driver line, & comment out register block # for firefox 
 # – otherwise headless from command line
-Capybara.default_driver = :selenium
+
+Capybara.default_driver = :selenium #enable this line to execute in browwer
 #Capybara.register_driver :chrome do |app|
  # Capybara::Selenium::Driver.new(app, :browser => :chrome)
 #end
 
-Capybara.javascript_driver = :chrome
+#Capybara.javascript_driver = :chrome # enable this line to execute test in browse
 
 
 

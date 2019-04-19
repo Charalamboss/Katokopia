@@ -4,17 +4,12 @@ require 'rails_helper'
 feature 'Index Page' do
     scenario "Navigate to Idex Page" do
         visit 'http://localhost:3000/'
-        	expect(page).to have_content ('About Page')
-        	expect(page).to have_content ('Anakoinosis') # Anouncements in Greek / Section with Anoouncements
-        	expect(page).to have_content ('Istoria') # History in greek / Section where major historical Events took Place
-        	expect(page).to have_content ('Koinotiko Simvoulio') #Board of Community in Greek
+        	expect(page).to have_content ('DOXA FC')
+        	expect(page).to have_content ('Accouncements') # Anouncements in Greek / Section with Anoouncements
+        	expect(page).to have_content ('PhotoRetro') # feature showing images
+        	expect(page).to have_content ('History Articles') #show articles about the history of community
+            #expect(page).to have_content('Comunity Members') # info about the members of comunity
 
-    end
-     scenario "can create customer error" do
-        visit '/customers/new'
-        	expect(page).to have_content('New Customer')
-        	click_button 'Create Customer'
-        	expect(page).to have_content('First name can\'t be blank')
     end
 end
 
@@ -33,15 +28,24 @@ end
 
 feature 'History' do
 	scenario 'See all Historical Articles' do
-		visit 'http://localhost:3000/History'
-    	expect(page). to have_content ('History Articles')
+		visit 'http://localhost:3000/articles'
+    	expect(page). to have_content ('articles')
+        select("1234567799")
+        click_link('Show')
 	end
-    scenario 'See historical Article' do
-    	visit '/History/1'
+    scenario 'See a particular article' do
+    	visit 'http://localhost:3000/articles/2'
     	expect(page). to have_content('Title')
     	expect(page). to have_content("Body")
     	expect(page). to have_contnet('Image')
     end
+
+    scenario 'New article' do
+        visit 'http://localhost:3000/articles'
+        click_link('New article')
+        #file name and body
+    end
+
 end
 
 feature 'Doxa FC' do
