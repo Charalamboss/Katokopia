@@ -7,7 +7,7 @@
 <img class=" article-pic" src="<%= @article.image %>">
  <div class="article-body">
 <p>
-  <strong>Text:</strong>
+  
   <%=sanitize(@article.body, tags: %w(b strong em i a)).html_safe %>
 </p>
 </div>
