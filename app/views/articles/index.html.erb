@@ -8,7 +8,7 @@
   <% @articles.each do |article| %>
   <div class="container-fluid article-items">
  <div class="raw">
-    <div class="col-md-3 "><img class=" article-index" src="<%= article.image %>"></div>
+    <div class="col-md-3 "><img class=" article-index" src="<%= article.image[0] %>"></div>
     <div class="col-md-2"><%= article.title[0..50] %></div>
     <div class="col-md-3 article-text"><%=strip_tags(article.body[0..150]+" ...")%></div>
     <div class="col-md-1"><%= link_to 'Show', article_path(article) %></div>
