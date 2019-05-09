@@ -27,7 +27,8 @@
 }
 
 .mainpic{
-	margin-bottom: 5%
+	margin-bottom: 5%;
+  border-radius: 60%
 }
 .article-pic{
 	display: block;
