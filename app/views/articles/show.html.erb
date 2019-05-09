@@ -6,7 +6,6 @@
  <p class="article-body">
   <%=sanitize(@article.body, tags: %w(b strong em i a)).html_safe %>
 </p>
-</div>
 
 <% if @article.image? %>
 <div id="carouselwithIndicators" class="carousel slide w-50 article-pic" data-ride="carousel">
